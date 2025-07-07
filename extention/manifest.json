@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Controller",
+  "version": "0.1",
+  "description": "Control your browser via a local server.",
+  "permissions": ["tabs", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+} 

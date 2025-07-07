@@ -1,0 +1,20 @@
+{
+  "name": "browser-controller-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for controlling Chrome browser extension",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "ws": "^8.14.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["websocket", "browser", "automation", "chrome-extension"],
+  "author": "",
+  "license": "MIT"
+} 
