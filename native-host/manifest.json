@@ -1,0 +1,9 @@
+{
+  "name": "com.browser_controller.native_host",
+  "description": "Browser Controller Native Messaging Host",
+  "path": "E:\\peace-doors\\browser-controller\\native-host\\native-host.js",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://__EXTENSION_ID__/"
+  ]
+} 

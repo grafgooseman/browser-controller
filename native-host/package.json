@@ -1,0 +1,9 @@
+{
+  "name": "native-host-proxy",
+  "version": "1.0.0",
+  "description": "Native messaging host proxy for Chrome extension <-> server communication",
+  "main": "native-host.js",
+  "dependencies": {
+    "ws": "^8.0.0"
+  }
+} 
