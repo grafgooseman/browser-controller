@@ -16,6 +16,7 @@ class BrowserControllerCLI {
             'navigate': this.handleNavigate.bind(this),
             'wait': this.handleWait.bind(this),
             'gettext': this.handleGetText.bind(this),
+            'presskey': this.handlePressKey.bind(this),
             'test': this.runTest.bind(this),
             'quit': this.quit.bind(this),
             'createtab': this.handleCreateTab.bind(this)
@@ -66,6 +67,7 @@ class BrowserControllerCLI {
         console.log('  navigate <url>          - Navigate to URL');
         console.log('  wait <selector> [timeout] - Wait for element to appear');
         console.log('  gettext <selector>      - Get text from element');
+        console.log('  presskey <key>          - Press a key (e.g., Enter, Tab)');
         console.log('  test                    - Run automated test');
         console.log('  quit                    - Exit CLI');
         console.log('  createtab <url>         - Create a new tab');
@@ -146,6 +148,19 @@ class BrowserControllerCLI {
         
         const result = await server.getText(selector);
         console.log(`📝 Text: "${result.text}"\n`);
+    }
+
+    async handlePressKey(args) {
+        if (args.length < 1) {
+            console.log('❌ Usage: presskey <key>');
+            return;
+        }
+        
+        const key = args[0];
+        console.log(`⌨️  Pressing key: ${key}`);
+        
+        const result = await server.pressKey(key);
+        console.log(`✅ ${result.message}\n`);
     }
 
     async runTest() {

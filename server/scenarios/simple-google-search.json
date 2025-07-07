@@ -1,0 +1,11 @@
+{
+  "name": "Simple Google Search",
+  "steps": [
+    { "action": "navigate", "url": "https://google.com" },
+    { "action": "wait", "time": 3000 },
+    { "action": "type", "selector": "#APjFqb", "text": "browser automation" },
+    { "action": "wait", "time": 1000 },
+    { "action": "click", "selector": "input[name='btnK']" },
+    { "action": "wait", "time": 2000 }
+  ]
+} 

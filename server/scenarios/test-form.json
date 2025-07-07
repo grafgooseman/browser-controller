@@ -1,0 +1,11 @@
+{
+  "name": "Test Form Filling",
+  "steps": [
+    { "action": "navigate", "url": "https://httpbin.org/forms/post" },
+    { "action": "wait", "time": 2000 },
+    { "action": "type", "selector": "input[name='custname']", "text": "John Doe" },
+    { "action": "type", "selector": "input[name='custemail']", "text": "john@example.com" },
+    { "action": "type", "selector": "textarea[name='comments']", "text": "This is a test comment" },
+    { "action": "click", "selector": "input[type='submit']" }
+  ]
+} 

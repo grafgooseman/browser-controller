@@ -1,0 +1,11 @@
+{
+  "name": "ChatGPT Photo Request",
+  "steps": [
+    { "action": "navigate", "url": "https://chat.openai.com" },
+    { "action": "wait", "time": 5000 },
+    { "action": "type", "selector": "div[contenteditable='true']#prompt-textarea", "text": "Generate a photo of a typical canadian suburban house" },
+    { "action": "wait", "time": 1000 },
+    { "action": "click", "selector": "#composer-submit-button" },
+    { "action": "wait", "time": 3000 }
+  ]
+} 

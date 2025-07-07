@@ -53,7 +53,13 @@ class BrowserControllerServer {
                     break;
 
                 case 'command_response':
-                    this.handleCommandResponse(message);
+                    // Only warn if commandId is not undefined/null
+                    if (message.commandId !== undefined && message.commandId !== null) {
+                        this.handleCommandResponse(message);
+                    } else if (message.command !== 'ping' && message.command !== 'pong') {
+                        // Suppress warning for ping/pong or system messages
+                        console.warn(`⚠️  Received response for unknown command: ${message.commandId}`);
+                    }
                     break;
 
                 case 'ping':
@@ -166,6 +172,10 @@ class BrowserControllerServer {
 
     async getText(selector) {
         return this.sendCommand({ command: 'getText', selector });
+    }
+
+    async pressKey(key) {
+        return this.sendCommand({ command: 'pressKey', key });
     }
 
     // Utility method to check if extension is connected
